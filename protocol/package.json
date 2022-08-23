@@ -1,0 +1,77 @@
+{
+  "name": "@fantasysport/contracts",
+  "description": "",
+  "version": "1.0.0",
+  "license": "Apache-2.0",
+  "source": "src/index.ts",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "module": "dist/contracts.esm.js",
+  "files": [
+    "contracts/",
+    "typechain/",
+    "dist/"
+  ],
+  "devDependencies": {
+    "@ethersproject/bytes": "^5.6.1",
+    "@ethersproject/providers": "^5.6.3",
+    "@nomiclabs/hardhat-ethers": "^2.0.5",
+    "@nomiclabs/hardhat-etherscan": "^3.0.3",
+    "@nomiclabs/hardhat-waffle": "^2.0.3",
+    "@openzeppelin/contracts": "^4.6.0",
+    "@openzeppelin/contracts-upgradeable": "^4.6.0",
+    "@openzeppelin/hardhat-upgrades": "^1.17.0",
+    "@primitivefi/hardhat-dodoc": "^0.2.3",
+    "@typechain/ethers-v5": "^9.0.0",
+    "@typechain/hardhat": "^5.0.0",
+    "@types/node": "^17.0.23",
+    "dotenv": "^16.0.0",
+    "ethers": "^5.6.3",
+    "hardhat": "^2.10.1",
+    "hardhat-abi-exporter": "^2.8.0",
+    "hardhat-contract-sizer": "^2.5.1",
+    "patch-package": "^6.4.7",
+    "prettier": "^2.6.0",
+    "prettier-plugin-solidity": "^1.0.0-beta.19",
+    "solhint": "^3.3.7",
+    "solhint-plugin-prettier": "^0.0.5",
+    "ts-node": "^10.7.0",
+    "tsup": "^5.11.11",
+    "typechain": "^7.0.1",
+    "typescript": "^4.7.3"
+  },
+  "peerDependencies": {
+    "ethers": "^5.0.0"
+  },
+  "resolutions": {
+    "typescript": "^4.5.0"
+  },
+  "scripts": {
+    "clean": "hardhat clean && rm -rf abi/ && rm -rf artifacts/ && rm -rf dist/ && rm -rf typechain/",
+    "compile": "hardhat compile",
+    "prettier": "prettier --config .prettierrc --write \"{contracts,src}/**/*.{js,json,sol,ts}\"",
+    "prettier:list-different": "prettier --config .prettierrc --list-different \"**/*.{js,json,sol,ts}\"",
+    "prettier:contracts": "prettier --config .prettierrc --list-different \"{contracts,src}/**/*.sol\"",
+    "test": "hardhat test",
+    "typechain": "hardhat typechain",
+    "build": "yarn clean && yarn patch-package && yarn compile && yarn build:lib",
+    "build:lib": "tsup --dts --env.NODE_ENV production --minify --format esm,cjs",
+    "patch-package": "patch-package",
+    "forge:build": "forge build --hardhat",
+    "forge:test": "forge test --hardhat",
+    "deploy:polygon": "hardhat run --network polygon scripts/deploy.ts",
+    "deploy:mumbai": "hardhat run --network mumbai scripts/deploy.ts",
+    "deploy:rinkeby": "hardhat run --network rinkeby scripts/deploy.ts"
+  },
+  "tsup": {
+    "entry": [
+      "typechain/**/*.ts"
+    ],
+    "splitting": false,
+    "sourcemap": true,
+    "clean": true
+  },
+  "dependencies": {
+    "@thirdweb-dev/contracts": "^2.4.3"
+  }
+}

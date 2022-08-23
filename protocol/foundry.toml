@@ -1,0 +1,8 @@
+[default]
+src = 'test/src'
+out = 'test/out'
+libs = ['test/lib']
+remappings = ['ds-test/=test/lib/ds-test/src/']
+
+# See more config options https://github.com/gakonst/foundry/tree/master/config
+# https://book.getfoundry.sh/forge/cheatcodes.html

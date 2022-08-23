@@ -1,0 +1,32 @@
+#### TODOS.md
+
+- [x] A page on the dashboard listing past/upcoming rounds [Sajal]
+- [x] There should be a Cancel/Edit button for the rounds. This is in case we make a mistake with timing or want to change the details of the round [Sajal]
+- [ ] Users should not be able to skip rounds when staking their NFTs. If the user fails to stake their NFT in Round 1 before the cutoff time, they should automatically be eliminated and they should not be able to enter Round 2.[Dennoh]
+- [ ] The Replay function should be available to all users until the start of the next round [Dennoh]
+- [ ] The dashboard should distinguish between which NFTs have lost and which ones have won. The winning NFTs should be identified as "Active" in green and the NFTs that lost should be identified as "Eliminated" in red.[Dennoh]
+- [ ] In the header in the dashboard, the player should be shown as "Active" as long as they still have Active NFTs in their wallet - perhaps it could list how many are still active. Alternatively, if the player has no remaining active NFTs in their wallet, the player should be shown as "Eliminated [Dennoh]
+- [x] in the Dashboard, the Nickname column should be renamed to the Linked Tier column and the crown images in the Linked Tier column should be deleted [Sajal]
+- [x] Delete entire bounty system (delete the bounty columns and bounty counter in the header) [Sajal]
+- [x] Dashboard button seems broken when inside of the replay. Please fix. [Sajal]
+- [x] Game lobby should track the results of all previous rounds and compile them into the one page. Every player that lost in round 1 will have the Rank of 8192. Everyone that lost in round 2 will have the rank of 4096, and so forth.[Sajal]
+- [x] Also, in the game lobby, we can eliminate the bounty column, change "Nickname" column to "Wallet Address" and the "Linked Tier" Column should list the name of the Linked Tier - not the image of the crown. I will provide a description that can be used instead of the current one [Sajal]
+- [x] We need to be able to batch airdrop prizes as discussed as many users will win the same prize depending on where they finish in the tournament[Sajal]
+- [x] There should be a list of winners and where they finished in the tournament somewhere in the admin panel. This is so I can pull the list of winners for, let's say, the lowest tier prize (512 winners) and use that list to batch airdrop the prize [Sajal]
+- [ ] Any NFTs that win the current round and remain staked should automatically be entered into the next round. If the user decides to unstake in between rounds, then the user must manually re-stake before the next round. If the user unstakes and forgets to restake before the next round, the NFT will be considered eliminated. Also, it is important that for all eliminated NFTs that remain staked, they must be not be able to enter future rounds. [Dennoh]
+- [x] Please provide me with the structure for the metadata needed for the initial mint [Dennoh]
+- [x] NFT mint page- A page where I can mint nfts from the dashboard [Sajal]
+- [ ]
+
+- ✅ On the player Dashboard Screen, the if all the player's NFTs have been eliminated, the player should be shown as Eliminated in **RED**. If the player still has any remaining active NFTs, then the Player should be shown as Active in **GREEN**
+- ✅ In the Create Round button in the admin panel, Tournament ID should list the names of the Tournaments that were created and not the number
+- ✅ The notifications that pop up whenever trying to complete an action should wrap and not trail off the screen
+- Tie hands should never occur. In the result of a tie, the simulation must be re-run for that particular match until a winner is determined. In the results, perhaps can make a note that there was a tie hand and the match was re-run [**Dennoh**]
+- ✅ There should be a Token ID column in the dashboard and lobby section. There should also list the Token ID of the match winner and loser in the results section
+- Dashboard button is still broken when trying to navigate from the replayer
+- Issue with all NFTs being show as eliminated after the round needs to be fixed [**Dennoh**]
+- ✅ Highlighted buttons should be a little more distinct
+- Should be an Export Results function to export results to an excel document
+- All 8,192 NFTs that will be issued will have different Token IDs, even though many of them will be the same tiers of NFTs [**Dennoh**]
+- ✅ Replayer should not automatically close after a set amount of time. The user must click back or navigate away from it for it to close
+- I think the Ace King Suited tier is coded wrong. It should only have 4 combinations (AsKs, AcKc, AhKh, AdKd). But in the replayer for the test nfts, the Ace King suited tier had AsKc as the hand [**Dennoh**]

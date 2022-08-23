@@ -1,0 +1,61 @@
+type Listing @entity {
+  id: ID!
+  lister: User!
+  assetContract: String!
+  tokenId: BigInt!
+  startTime: BigInt!
+  endTime: BigInt!
+  quantity: BigInt!
+  currency: Currency!
+  reservePricePerToken: BigInt!
+  buyoutPricePerToken: BigInt!
+  tokenType: TokenType!
+  asset: Asset!
+  listingType: ListingType!
+  timestamp: BigInt!
+}
+
+enum TokenType {
+  ERC1155
+  ERC721
+}
+enum ListingType {
+  Direct
+  Auction
+}
+
+type User @entity {
+  id: ID!
+  listings: [Listing!]! @derivedFrom(field: "lister")
+  sales: [Sale!]! @derivedFrom(field: "buyer")
+}
+
+type Asset @entity {
+  id: ID!
+  uri: String!
+  tokenId: BigInt!
+  assetContract: String!
+  # name: String
+  # description: String
+  # image: String
+  # external_url: String
+  # animation_url: String
+  # properties: String
+}
+
+type Currency @entity {
+  id: ID!
+  name: String!
+  symbol: String!
+  decimals: BigInt
+}
+type Sale @entity {
+  id: ID!
+  listingId: BigInt!
+  assetContract: String!
+  lister: User!
+  buyer: User!
+  quantityBought: BigInt!
+  totalPricePaid: BigInt!
+  timestamp: BigInt!
+}
